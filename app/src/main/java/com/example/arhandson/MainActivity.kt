@@ -7,13 +7,17 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
+import com.google.ar.sceneform.ux.ArFragment
 
 class MainActivity : AppCompatActivity() {
+    private var fragment: ArFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        fragment = supportFragmentManager.findFragmentById(R.id.sceneform_fragment) as ArFragment?
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
